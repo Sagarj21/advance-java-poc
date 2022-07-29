@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class OracleToMysqlDataTransferTest {
-	private static final String MYSQL_INSERT_STUDENT="INSERT INTO STUDENT( SNO,SNAME,SADD) VALUES(?,?,?)";
+public class OracleToMysqlDataTransferTest{
+	private static final String MYSQL_INSERT_STUDENT="INSERT INTO STUDENT( SNAME,SADD,AVG) VALUES(?,?,?)";
 	private static final String ORACLE_INSERT_STUDENT="SELECT SNO,SNAME,SADD,AVG FROM STUDENT";
 	public static void main(String[] args) {
 		Connection oracon=null,mysqlcon=null;
@@ -16,12 +16,10 @@ public class OracleToMysqlDataTransferTest {
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		try {
-			//register jdbc driver(optional)
-			Class.forName("Oracle.jdbc.driver.OracleDriver");
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			
 			//establish cinnection
 			oracon=DriverManager.getConnection("jdbc:oracle:thin:@localHost:1521:orcl","system","sagar");
-			mysqlcon=DriverManager.getConnection("jdbc:mysql:///ntaj415db","root","root");
+			mysqlcon=DriverManager.getConnection("jdbc:mysql:///nataraz","root","root");
 
 
 			//create statement object

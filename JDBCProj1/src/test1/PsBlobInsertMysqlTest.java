@@ -40,30 +40,24 @@ public class PsBlobInsertMysqlTest {
 				//establish the connection and create prepared statement object
 				try(Connection con=DriverManager.getConnection("jdbc:mysql:///nataraz","root","root");
 					PreparedStatement ps=con.prepareStatement(INSERT_ARTIST_QUERY);){
-
 					//set values to params
 					if(ps!=null)
-					{
-						
+					{						
 						ps.setString(1, name);
 						ps.setString(2, addrs);
 						ps.setBinaryStream(3, is);
 						System.out.println("****************");
-
 					}
 					//execute the query
 					int count=0;
 					if(ps!=null)
 						count=ps.executeUpdate();
-
 					//process the result
 					if(count==0)
 					{
 						System.out.println("record not inserted");
-
 					}else
 						System.out.println("Record inserted");
-
 				}//try
 			}
 			//try
@@ -76,10 +70,6 @@ public class PsBlobInsertMysqlTest {
 			}
 
 		}//try
-
-
-
-
 	}
 
 }

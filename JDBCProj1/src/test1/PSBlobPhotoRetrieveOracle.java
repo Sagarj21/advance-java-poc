@@ -49,7 +49,7 @@ public class PSBlobPhotoRetrieveOracle {
 									OutputStream os=new FileOutputStream("retrieve_image.jpg");
 									){
 								//copy blob column value to destination folder
-								IOUtils.copy(is, os);
+								IOUtils.copy(is, os);//source to destination ,download commons jar file from mvn repo
 								System.out.println("blob value is retrieved and stored into file");
 							}//t4
 

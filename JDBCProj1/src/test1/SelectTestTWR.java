@@ -65,45 +65,15 @@ public class SelectTestTWR {
 		{
 			ss.printStackTrace();
 		}
-		finally {
-			//close djbc conn
-			try {
-				if(rs!=null)
-					rs.close();
-			}
-			catch(SQLException se)
-			{
-			  se.printStackTrace();
-			}
-			try {
-				if(con!=null)
-				{
-					con.close();
-				}
-			}
-			catch(SQLException s)
-			{
-				s.printStackTrace();
-			}
-			
-			try {
-				if(st!=null)
-					st.close();
-			}
-			catch(SQLException se)
-			{
-				se.printStackTrace();
-			}
-			
-		}
+		
 
 	}
 
 }
 
 
-//it is not recommended to place * symbol isn select sql query of djcb appliction bcoz it willnot give clairty while processing reduutset
-//aleways write query after specifying col name
+//it is not recommended to place * symbol in select sql query of jdbc application bcoz it will not give clarity while processing redutset
+//always write query after specifying col name
 
 
 
